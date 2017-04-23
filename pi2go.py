@@ -16,8 +16,7 @@ irFR = 11
 irMID = 15
 
 def init():
-    global p, q, a, b, pwm, pcfADC, PGType
-    PGType = PGFull
+    global p, q, a, b, pwm, pcfADC
     # Initialise the PCA9685 PWM device using the default address
     try:
         pwm = PWM(0x40, debug = False)
