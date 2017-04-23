@@ -27,4 +27,4 @@ while not (pi2go.irLeft() or pi2go.irRight()):
         pi2go.forward(speed)
     pi2go.stop()
     
-  pi2go.cleanup()
+pi2go.cleanup()
