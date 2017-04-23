@@ -32,10 +32,6 @@ def init():
     #use physical pin numbering
     GPIO.setmode(GPIO.BOARD)
 
-    #set up digital line detectors as inputs
-    GPIO.setup(lineRight, GPIO.IN) # Right line sensor
-    GPIO.setup(lineLeft, GPIO.IN) # Left line sensor
-
     #Set up IR obstacle sensors as inputs
     GPIO.setup(irFL, GPIO.IN) # Left obstacle sensor
     GPIO.setup(irFR, GPIO.IN) # Right obstacle sensor
