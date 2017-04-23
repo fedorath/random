@@ -19,10 +19,7 @@ while True:
         # While the right sensor detects something - spin left
         pi2go.spinLeft(speed)
       pi2go.stop()
-    while not (pi2go.irLeft() or pi2go.irRight()):
-      if pi2go.getDistance() <= 0.3: # If the distance is less than 0.3, spin right for 1 second
-        pi2go.spinRight(speed)
-        time.sleep(1)
+
       else:
         pi2go.forward(speed)
     pi2go.stop()
