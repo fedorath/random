@@ -68,7 +68,6 @@ def cleanup():
     stop()
     setAllLEDs(0, 0, 0)
     stopServod()
-    time.sleep(1)
     GPIO.cleanup()
 
 flag=0
