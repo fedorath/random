@@ -20,7 +20,7 @@ while True:
         pi2go.spinLeft(speed)
       pi2go.stop()
 while not (pi2go.irLeft() or pi2go.irRight()):
-    if pi2go.irCentre()
+    if pi2go.irCentre():
       pi2go.spinRight(speed)
         time.sleep(1)
       else:
