@@ -64,7 +64,12 @@ def init():
     except:
         PGType = PGLite
 
-
+def cleanup():
+    stop()
+    setAllLEDs(0, 0, 0)
+    stopServod()
+    time.sleep(1)
+    GPIO.cleanup()
 
 flag=0
 while True:
@@ -142,3 +147,4 @@ while True:
     			q.ChangeDutyCycle(0)
     			a.ChangeDutyCycle(0)
     			b.ChangeDutyCycle(0)
+		cleanup()
