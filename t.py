@@ -30,10 +30,10 @@ b.start(0)
 
 
 #Motor stop/brake
-GPIO.output(26,0) 
-GPIO.output(24,0)
-GPIO.output(19,0)
-GPIO.output(21,0)
+GPIO.output(p,0) 
+GPIO.output(q,0)
+GPIO.output(a,0)
+GPIO.output(b,0)
 speed = 80
 flag=0
 while True:
