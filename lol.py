@@ -140,4 +140,4 @@ def init():
     			q.ChangeDutyCycle(0)
     			a.ChangeDutyCycle(0)
     			b.ChangeDutyCycle(0)
-		GPIO.cleanup()
+
