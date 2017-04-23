@@ -18,6 +18,9 @@ L1 = 26
 L2 = 24
 R1 = 19
 R2 = 21
+def init():
+    global p, q, a, b, pwm, pcfADC, PGType
+    PGType = PGFull
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(irFR, GPIO.IN) #Right IR sensor module
