@@ -65,16 +65,6 @@ def init():
     #if PGType == PGLite:
     #    startServos()
 
-
-# cleanup(). Sets all motors and LEDs off and sets GPIO to standard values
-def cleanup():
-    stop()
-    setAllLEDs(0, 0, 0)
-    stopServod()
-    time.sleep(1)
-    GPIO.cleanup()
-
-
 # version(). Returns 1 for Full Pi2Go, and 2 for Pi2Go-Lite. Invalid until after init() has been called
 def version():
     return PGType
