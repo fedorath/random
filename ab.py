@@ -10,15 +10,22 @@ speed = 80
 # In order to get your head around it go through the logical steps slowly!
 while True:
     if pi2go.irLeft():
+        
+        
       while pi2go.irLeft():
         # While the left sensor detects something - spin right
         pi2go.spinRight(speed)
       pi2go.stop()
     if pi2go.irRight():
+        
+        
+        
+        
       while pi2go.irRight():
         # While the right sensor detects something - spin left
         pi2go.spinLeft(speed)
       pi2go.stop()
+    
 while not (pi2go.irLeft() or pi2go.irRight()):
     if pi2go.irCentre():
       pi2go.spinRight(speed)
