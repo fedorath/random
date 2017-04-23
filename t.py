@@ -45,13 +45,12 @@ while True:
 		if i==0: #Obstacle detected on right IR sensor
 			print "Obstacle detected on Right",i 
 			#Move in reverse direction
-    			p.ChangeDutyCycle(speed)
-    			q.ChangeDutyCycle(0)
-    			a.ChangeDutyCycle(speed)
-    			b.ChangeDutyCycle(0)
-    			p.ChangeFrequency(speed + 5)
-    			a.ChangeFrequency(speed + 5)
-			time.sleep(1)
+    			p.ChangeDutyCycle(0)
+    			q.ChangeDutyCycle(speed)
+    			a.ChangeDutyCycle(0)
+    			b.ChangeDutyCycle(speed)
+    			q.ChangeFrequency(speed + 5)
+    			b.ChangeFrequency(speed + 5)
 
 
     			p.ChangeDutyCycle(speed)
@@ -62,12 +61,12 @@ while True:
     			b.ChangeFrequency(speed + 5)
 		if k==0: #Obstacle detected on left IR sensor
 			print "Obstacle detected on Left",k
-    			p.ChangeDutyCycle(speed)
-    			q.ChangeDutyCycle(0)
-    			a.ChangeDutyCycle(speed)
-    			b.ChangeDutyCycle(0)
-    			p.ChangeFrequency(speed + 5)
-    			a.ChangeFrequency(speed + 5)
+    			p.ChangeDutyCycle(0)
+    			q.ChangeDutyCycle(speed)
+    			a.ChangeDutyCycle(0)
+    			b.ChangeDutyCycle(speed)
+    			q.ChangeFrequency(speed + 5)
+    			b.ChangeFrequency(speed + 5)
 
     			p.ChangeDutyCycle(0)
    			q.ChangeDutyCycle(speed)
@@ -78,12 +77,12 @@ while True:
 
 		elif i==0 and k==0:
 			print "Obstacles on both sides"
-    			p.ChangeDutyCycle(speed)
-    			q.ChangeDutyCycle(0)
-    			a.ChangeDutyCycle(speed)
-    			b.ChangeDutyCycle(0)
-    			p.ChangeFrequency(speed + 5)
-    			a.ChangeFrequency(speed + 5)
+    			p.ChangeDutyCycle(0)
+    			q.ChangeDutyCycle(speed)
+    			a.ChangeDutyCycle(0)
+    			b.ChangeDutyCycle(speed)
+    			q.ChangeFrequency(speed + 5)
+    			b.ChangeFrequency(speed + 5)
 
     			p.ChangeDutyCycle(speed)
     			q.ChangeDutyCycle(0)
