@@ -64,14 +64,8 @@ def init():
     except:
         PGType = PGLite
 
-def cleanup():
-    stop()
-    setAllLEDs(0, 0, 0)
-    stopServod()
-    GPIO.cleanup()
-
-flag=0
-while True:
+    flag=0
+    while True:
 	j=GPIO.input(irMID)
 	if j==1: #Robot is activated when button is pressed
 		flag=1
@@ -146,4 +140,4 @@ while True:
     			q.ChangeDutyCycle(0)
     			a.ChangeDutyCycle(0)
     			b.ChangeDutyCycle(0)
-		cleanup()
+		GPIO.cleanup()
