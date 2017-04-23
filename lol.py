@@ -24,17 +24,6 @@ GPIO.setup(irFR, GPIO.IN) #Right IR sensor module
 GPIO.setup(irMID, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #Activation button
 GPIO.setup(irFL, GPIO.IN, pull_up_down=GPIO.PUD_UP) #Left IR sensor module
 
-GPIO.setup(L1,GPIO.OUT) #Left motor control
-GPIO.setup(L2,GPIO.OUT) #Left motor control
-GPIO.setup(R1,GPIO.OUT) #Right motor control
-GPIO.setup(R2,GPIO.OUT) #Right motor control
-
-#Motor stop/brake
-GPIO.output(L1,0) 
-GPIO.output(L2,0)
-GPIO.output(R1,0)
-GPIO.output(R2,0)
-
 speed = 40
 
 try:
