@@ -1,4 +1,4 @@
-
+#!/usr/bin/python
 import pi2go, time
 
 pi2go.init()
