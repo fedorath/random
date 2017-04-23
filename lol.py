@@ -32,22 +32,22 @@ try:
 except:
     PGType = PGLite
 	
- #use pwm on inputs so motors don't go too fast
-GPIO.setup(26, GPIO.OUT)
-p = GPIO.PWM(26, 20)
-p.start(0)
+    #use pwm on inputs so motors don't go too fast
+    GPIO.setup(L1, GPIO.OUT)
+    p = GPIO.PWM(L1, 20)
+    p.start(0)
 
-GPIO.setup(24, GPIO.OUT)
-q = GPIO.PWM(24, 20)
-q.start(0)
+    GPIO.setup(L2, GPIO.OUT)
+    q = GPIO.PWM(L2, 20)
+    q.start(0)
 
-GPIO.setup(19, GPIO.OUT)
-a = GPIO.PWM(19, 20)
-a.start(0)
+    GPIO.setup(R1, GPIO.OUT)
+    a = GPIO.PWM(R1, 20)
+    a.start(0)
 
-GPIO.setup(21, GPIO.OUT)
-b = GPIO.PWM(21, 20)
-b.start(0)
+    GPIO.setup(R2, GPIO.OUT)
+    b = GPIO.PWM(R2, 20)
+    b.start(0)
 
 
 pcfADC = None # ADC object
