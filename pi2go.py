@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import RPi.GPIO as GPIO, sys, threading, time, os
 from extra_tools.Adafruit_PWM_Servo_Driver import PWM
 from extra_tools.sgh_PCF8591P import sgh_PCF8591P
