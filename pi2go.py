@@ -4,6 +4,10 @@ import RPi.GPIO as GPIO, sys, threading, time, os
 from Adafruit_PWM_Servo_Driver import PWM
 from sgh_PCF8591P import sgh_PCF8591P
 
+PGNone = 0
+PGFull = 1
+PGLite = 2
+PGType = PGNone
 
 L1 = 26
 L2 = 24
@@ -17,6 +21,7 @@ irMID = 15
 
 def init():
     global p, q, a, b, pwm, pcfADC
+    PGType = PGFull
     # Initialise the PCA9685 PWM device using the default address
     try:
         pwm = PWM(0x40, debug = False)
