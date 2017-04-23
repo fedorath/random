@@ -87,10 +87,10 @@ b.start(0)
 
 
 pcfADC = None # ADC object
-    try:
-        pcfADC = sgh_PCF8591P(1) #i2c, 0x48)
-    except:
-        PGType = PGLite
+try:
+    pcfADC = sgh_PCF8591P(1) #i2c, 0x48)
+except:
+    PGType = PGLite
 
 
 
