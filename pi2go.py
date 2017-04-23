@@ -64,10 +64,17 @@ def init():
     # initialise servos (Pi2Go-Lite only) Matt TB - Servo activation not necessary on init
     #if PGType == PGLite:
     #    startServos()
+def cleanup():
+    stop()
+    setAllLEDs(0, 0, 0)
+    stopServod()
+    time.sleep(1)
+    GPIO.cleanup()
 
 # version(). Returns 1 for Full Pi2Go, and 2 for Pi2Go-Lite. Invalid until after init() has been called
 def version():
     return PGType
+
 
 # End of General Functions
 #======================================================================
