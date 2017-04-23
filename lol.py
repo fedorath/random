@@ -31,6 +31,9 @@ GPIO.output(R2,0)
 
 speed = 40
 
+pwm = PWM(0x40, debug = False)
+pwm.setPWMFreq(60)
+
 def goBoth(speed):
     if speed<0:
         reverse(abs(speed))
@@ -60,8 +63,8 @@ def irCentre():
     else:
         return False
 
-pwm = PWM(0x40, debug = False)
-        pwm.setPWMFreq(60)
+
+	
  #use pwm on inputs so motors don't go too fast
 GPIO.setup(26, GPIO.OUT)
 p = GPIO.PWM(26, 20)
