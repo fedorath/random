@@ -21,19 +21,19 @@ R2 = 21
 def init():
     global p, q, a, b, pwm, pcfADC, PGType
     PGType = PGFull
+    try:
+        pwm = PWM(0x40, debug = False)
+        pwm.setPWMFreq(60)  # Set frequency to 60 Hz
+    except:
+        PGType = PGLite
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(irFR, GPIO.IN) #Right IR sensor module
+    GPIO.setup(irMID, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #Activation button
+    GPIO.setup(irFL, GPIO.IN, pull_up_down=GPIO.PUD_UP) #Left IR sensor module
 
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(irFR, GPIO.IN) #Right IR sensor module
-GPIO.setup(irMID, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #Activation button
-GPIO.setup(irFL, GPIO.IN, pull_up_down=GPIO.PUD_UP) #Left IR sensor module
+    speed = 40
 
-speed = 40
 
-try:
-    pwm = PWM(0x40, debug = False)
-    pwm.setPWMFreq(60)  # Set frequency to 60 Hz
-except:
-    PGType = PGLite
 	
     #use pwm on inputs so motors don't go too fast
     GPIO.setup(L1, GPIO.OUT)
@@ -53,11 +53,11 @@ except:
     b.start(0)
 
 
-pcfADC = None # ADC object
-try:
-    pcfADC = sgh_PCF8591P(1) #i2c, 0x48)
-except:
-    PGType = PGLite
+    pcfADC = None # ADC object
+    try:
+        pcfADC = sgh_PCF8591P(1) #i2c, 0x48)
+    except:
+        PGType = PGLite
 
 
 
