@@ -27,6 +27,3 @@ try:
       else:
         pi2go.forward(speed)
     pi2go.stop()
-
-finally: # Even if there was an error, cleanup
-  pi2go.cleanup()
