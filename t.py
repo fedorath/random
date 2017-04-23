@@ -1,9 +1,12 @@
 import RPi.GPIO as GPIO
 import time
+from extra_tools.Adafruit_PWM_Servo_Driver import PWM
+from extra_tools.sgh_PCF8591P import sgh_PCF8591P
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11, GPIO.IN) #Right IR sensor module
-GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #Activation button
+GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #Activation button
 GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_UP) #Left IR sensor module
 
 GPIO.setup(26,GPIO.OUT) #Left motor control
@@ -31,7 +34,7 @@ b.start(0)
 speed = 80
 flag=0
 while True:
-	j=GPIO.input(13)
+	j=GPIO.input(16)
 	if j==1: #Robot is activated when button is pressed
 		flag=1
 		print "Robot Activated",j
@@ -98,7 +101,7 @@ while True:
     			b.ChangeDutyCycle(0)
     			p.ChangeFrequency(speed + 5)
     			a.ChangeFrequency(speed + 5)
-		j=GPIO.input(13)
+		j=GPIO.input(16)
 		if j==1: #De activate robot on pushin the button
 			flag=0
 			print "Robot De-Activated",j
