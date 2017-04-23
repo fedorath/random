@@ -184,7 +184,7 @@ def goBoth(speed):
     else:
         forward(speed)
 		
-	def irLeft():
+def irLeft():
     if GPIO.input(irFL)==0:
         return True
     else:
