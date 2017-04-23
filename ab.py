@@ -26,3 +26,6 @@ while not (pi2go.irLeft() or pi2go.irRight()):
     else:
         pi2go.forward(speed)
     pi2go.stop()
+    
+finally: # Even if there was an error, cleanup
+  pi2go.cleanup()
