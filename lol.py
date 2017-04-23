@@ -4,6 +4,12 @@ from Adafruit_PWM_Servo_Driver import PWM
 from sgh_PCF8591P import sgh_PCF8591P
 
 GPIO.setwarnings(False)
+PGNone = 0
+PGFull = 1
+PGLite = 2
+PGType = PGNone
+
+
 irFL = 7
 irFR = 11
 irMID = 15
