@@ -65,16 +65,6 @@ def init():
     #if PGType == PGLite:
     #    startServos()
 
-    #set up Pi2Go-Lite White LEDs as outputs
-        GPIO.setup(frontLED, GPIO.OUT)
-        GPIO.setup(rearLED, GPIO.OUT)
-
-    #set switch as input with pullup
-    if PGType == PGLite:
-        GPIO.setup(Lswitch, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    else:
-        GPIO.setup(switch, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
 
 # cleanup(). Sets all motors and LEDs off and sets GPIO to standard values
 def cleanup():
