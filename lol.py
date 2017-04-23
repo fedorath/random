@@ -31,20 +31,6 @@ try:
     pwm.setPWMFreq(60)  # Set frequency to 60 Hz
 except:
     PGType = PGLite
-
-
-    
-# irCentre(): Returns state of Centre IR Obstacle sensor
-# (Not available on Pi2Go-Lite)
-def irCentre():
-    if PGType != PGFull:
-        return False
-    if GPIO.input(irMID)==0:
-        return True
-    else:
-        return False
-
-
 	
  #use pwm on inputs so motors don't go too fast
 GPIO.setup(26, GPIO.OUT)
