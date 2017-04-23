@@ -31,8 +31,11 @@ GPIO.output(R2,0)
 
 speed = 40
 
-pwm = PWM(0x40, debug = False)
-pwm.setPWMFreq(60)
+try:
+    pwm = PWM(0x40, debug = False)
+    pwm.setPWMFreq(60)  # Set frequency to 60 Hz
+except:
+    PGType = PGLite
 
 def goBoth(speed):
     if speed<0:
@@ -83,7 +86,11 @@ b = GPIO.PWM(21, 20)
 b.start(0)
 
 
-
+pcfADC = None # ADC object
+    try:
+        pcfADC = sgh_PCF8591P(1) #i2c, 0x48)
+    except:
+        PGType = PGLite
 
 
 
