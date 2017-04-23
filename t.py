@@ -48,60 +48,60 @@ while True:
 		if i==0: #Obstacle detected on right IR sensor
 			print "Obstacle detected on Right",i 
 			#Move in reverse direction
-			GPIO.output(24,speed) #Left motor turns anticlockwise
-			GPIO.output(26,0)  
-			GPIO.output(19,speed) #Right motor turns clockwise
-			GPIO.output(21,0)		
+			GPIO.output(p,speed) #Left motor turns anticlockwise
+			GPIO.output(q,0)  
+			GPIO.output(a,speed) #Right motor turns clockwise
+			GPIO.output(b,0)		
 			time.sleep(1)
 
 			#Turn robot left
-			GPIO.output(24,0) #Left motor turns clockwise
-			GPIO.output(26,speed)
-			GPIO.output(19,speed) #Right motor turns clockwise
-			GPIO.output(21,0)
+			GPIO.output(p,0) #Left motor turns clockwise
+			GPIO.output(q,speed)
+			GPIO.output(a,speed) #Right motor turns clockwise
+			GPIO.output(b,0)
 			time.sleep(2)
 		if k==0: #Obstacle detected on left IR sensor
 			print "Obstacle detected on Left",k
-			GPIO.output(24,speed)
-			GPIO.output(26,0)
-			GPIO.output(19,speed)
-			GPIO.output(21,0)		
+			GPIO.output(p,speed)
+			GPIO.output(q,0)
+			GPIO.output(a,speed)
+			GPIO.output(b,0)		
 			time.sleep(1)
 
-			GPIO.output(24,speed)
-			GPIO.output(26,0)
-			GPIO.output(19,0)
-			GPIO.output(21,speed)
+			GPIO.output(p,speed)
+			GPIO.output(q,0)
+			GPIO.output(a,0)
+			GPIO.output(b,speed)
 			time.sleep(2)
 
 		elif i==0 and k==0:
 			print "Obstacles on both sides"
-			GPIO.output(24,speed)
-			GPIO.output(26,0)
-			GPIO.output(19,speed)
-			GPIO.output(21,0)		
+			GPIO.output(p,speed)
+			GPIO.output(q,0)
+			GPIO.output(a,speed)
+			GPIO.output(b,0)		
 			time.sleep(2)
 
-			GPIO.output(24,speed)
-			GPIO.output(26,0)
-			GPIO.output(19,0)
-			GPIO.output(21,speed)
+			GPIO.output(p,speed)
+			GPIO.output(q,0)
+			GPIO.output(a,0)
+			GPIO.output(b,speed)
 			time.sleep(4)
 			
 		elif i==1 and k==1:	#No obstacles, robot moves forward
 			print "No obstacles",i
 			#Robot moves forward
-			GPIO.output(24,0)
-			GPIO.output(26,speed)
-			GPIO.output(19,0)
-			GPIO.output(21,speed)
+			GPIO.output(p,0)
+			GPIO.output(q,speed)
+			GPIO.output(a,0)
+			GPIO.output(b,speed)
 			time.sleep(0.5)
 		j=GPIO.input(13)
 		if j==1: #De activate robot on pushin the button
 			flag=0
 			print "Robot De-Activated",j
-			GPIO.output(24,0)
-			GPIO.output(26,0)
-			GPIO.output(19,0)
-			GPIO.output(21,0)
+			GPIO.output(p,0)
+			GPIO.output(q,0)
+			GPIO.output(a,0)
+			GPIO.output(b,0)
 			time.sleep(1)
