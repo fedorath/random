@@ -8,7 +8,7 @@ speed = 40
 
 # Here is the main body of the program - a lot of while loops and ifs!
 # In order to get your head around it go through the logical steps slowly!
-  while True:
+while True:
     if pi2go.irLeft():
       while pi2go.irLeft():
         # While the left sensor detects something - spin right
