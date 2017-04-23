@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
-from extra_tools.Adafruit_PWM_Servo_Driver import PWM
-from extra_tools.sgh_PCF8591P import sgh_PCF8591P
+from Adafruit_PWM_Servo_Driver import PWM
+from sgh_PCF8591P import sgh_PCF8591P
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
