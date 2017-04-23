@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
 import time
+import sys
+import os
 from Adafruit_PWM_Servo_Driver import PWM
 from sgh_PCF8591P import sgh_PCF8591P
 
@@ -26,7 +28,10 @@ def init():
         pwm.setPWMFreq(60)  # Set frequency to 60 Hz
     except:
         PGType = PGLite
+	
+	
     GPIO.setmode(GPIO.BOARD)
+
     GPIO.setup(irFR, GPIO.IN) #Right IR sensor module
     GPIO.setup(irMID, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #Activation button
     GPIO.setup(irFL, GPIO.IN, pull_up_down=GPIO.PUD_UP) #Left IR sensor module
