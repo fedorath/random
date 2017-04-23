@@ -28,12 +28,6 @@ GPIO.setup(21, GPIO.OUT)
 b = GPIO.PWM(21, 20)
 b.start(0)
 
-
-#Motor stop/brake
-GPIO.output(p,0) 
-GPIO.output(q,0)
-GPIO.output(a,0)
-GPIO.output(b,0)
 speed = 80
 flag=0
 while True:
