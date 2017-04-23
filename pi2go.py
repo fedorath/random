@@ -21,13 +21,7 @@ irMID = 15
 
 def init():
     global p, q, a, b, pwm, pcfADC
-    PGType = PGFull
-    # Initialise the PCA9685 PWM device using the default address
-    try:
-        pwm = PWM(0x40, debug = False)
-        pwm.setPWMFreq(60)  # Set frequency to 60 Hz
-    except:
-        PGType = PGLite # No PCA9685 so set to Pi2Go-Lite
+
 
     #use physical pin numbering
     GPIO.setmode(GPIO.BOARD)
@@ -61,9 +55,7 @@ def init():
     except:
         PGType = PGLite
 
-    # initialise servos (Pi2Go-Lite only) Matt TB - Servo activation not necessary on init
-    #if PGType == PGLite:
-    #    startServos()
+
 def cleanup():
     stop()
     setAllLEDs(0, 0, 0)
@@ -71,20 +63,9 @@ def cleanup():
     time.sleep(1)
     GPIO.cleanup()
 
-# version(). Returns 1 for Full Pi2Go, and 2 for Pi2Go-Lite. Invalid until after init() has been called
 def version():
     return PGType
 
-
-# End of General Functions
-#======================================================================
-
-
-#======================================================================
-# Motor Functions
-# (both versions)
-#
-# stop(): Stops both motors
 def stop():
     p.ChangeDutyCycle(0)
     q.ChangeDutyCycle(0)
