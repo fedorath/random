@@ -86,14 +86,14 @@ b.start(0)
 
 flag=0
 while True:
-	j=GPIO.input(13)
+	j=GPIO.input(irMID)
 	if j==1: #Robot is activated when button is pressed
 		flag=1
 		print "Robot Activated",j
 	
 	while flag==1:
-		i=GPIO.input(7) #Listening for output from right IR sensor
-		k=GPIO.input(11) #Listening for output from left IR sensor
+		i=GPIO.input(irFL) #Listening for output from right IR sensor
+		k=GPIO.input(irFR) #Listening for output from left IR sensor
 		if i==0: #Obstacle detected on right IR sensor
 			print "Obstacle detected on Right",i 
 			#Move in reverse direction
@@ -152,7 +152,7 @@ while True:
     			b.ChangeDutyCycle(0)
    			p.ChangeFrequency(speed + 5)
     			a.ChangeFrequency(speed + 5)
-		j=GPIO.input(13)
+		j=GPIO.input(irMID)
 		if j==1: #De activate robot on pushin the button
 			flag=0
 			print "Robot De-Activated",j
