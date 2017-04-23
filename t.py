@@ -31,7 +31,7 @@ GPIO.setup(21, GPIO.OUT)
 b = GPIO.PWM(21, 20)
 b.start(0)
 
-speed = 80
+speed = 40
 flag=0
 while True:
 	j=GPIO.input(13)
