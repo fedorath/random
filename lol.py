@@ -43,24 +43,7 @@ try:
 except:
     PGType = PGLite
 
-def goBoth(speed):
-    if speed<0:
-        reverse(abs(speed))
-    else:
-        forward(speed)
-		
-def irLeft():
-    if GPIO.input(irFL)==0:
-        return True
-    else:
-        return False
-    
-# irRight(): Returns state of Right IR Obstacle sensor
-def irRight():
-    if GPIO.input(irFR)==0:
-        return True
-    else:
-        return False
+
     
 # irCentre(): Returns state of Centre IR Obstacle sensor
 # (Not available on Pi2Go-Lite)
