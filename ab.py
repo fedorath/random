@@ -4,7 +4,7 @@ import pi2go, time
 pi2go.init()
 
 # Here we set the speed to 40 out of 100 - feel free to change!
-speed = 40
+speed = 80
 
 # Here is the main body of the program - a lot of while loops and ifs!
 # In order to get your head around it go through the logical steps slowly!
