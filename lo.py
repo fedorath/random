@@ -64,7 +64,7 @@ while True:#While loop which grabs images until it is told to stop.
 	radius = d.findBlobs()
 ##########################################{Blob}##########################################				
 	
-def sBlobs():	
+	
 	if avg >= 10: #average mean greater equal to 10
 		if blobs:
 
