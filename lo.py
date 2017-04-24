@@ -91,12 +91,13 @@ while True:#While loop which grabs images until it is told to stop.
 		print ("Intruder Image Stored!")
 		
 def directoryname(directory):
+	
 	if settime >= (Stime + Time):
 		for root, dirs, files in os.walk(directory, topdown=False):#checks the folder for images
 			for file in files:#finds the image
 				Sortfile = sorted(files)[0]
 				mailer = os.path.join(root, Sortfile)
-				email(mailer)#sends image to email function
+				email(Gmail)#sends image to email function
 				
 				
 
