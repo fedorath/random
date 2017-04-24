@@ -97,7 +97,7 @@ def directoryname(directory):
 			for file in files:#finds the image
 				Sortfile = sorted(files)[0]
 				mailer = os.path.join(root, Sortfile)
-				email(Gmail)#sends image to email function
+				email(mailer)#sends image to email function
 				
 				
 
