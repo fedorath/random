@@ -90,8 +90,7 @@ while True:#While loop which grabs images until it is told to stop.
 		print ("Processing %s...") 
 		print ("Intruder Image Stored!")
 		
-def directoryname(directory):
-	
+
 	if settime >= (Stime + Time):
 		for root, dirs, files in os.walk(directory, topdown=False):#checks the folder for images
 			for file in files:#finds the image
